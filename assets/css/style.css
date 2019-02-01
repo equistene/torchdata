@@ -1,14 +1,18 @@
-body{
-  background: url(../img/bg.jpg);  
-  font-family: 'Open Sans', sans-serif;
-  --main-color: #00dbff;  
+:root{
+  --main-color: #00dbff;
+}
+
+body{    
+  background: url(../img/bg.png) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; 
+  font-family: 'Open Sans', sans-serif;    
   margin: 0; padding: 0;
 }
 
 main{  
-  display: flex;
+  display: grid;
   align-items: center;
-  padding: 20px 10px;
+  grid-template-columns: 1fr;
+  padding: 20px 0;
   position: relative;
 }
 
@@ -17,24 +21,47 @@ main section{
   margin: 0 auto;
 }
 
+main section.img{  
+  display: flex;
+  height: 100%;
+  align-items: flex-end;
+}
+
+section.img img{
+  width: 100%;
+  height: auto;
+}
+
 .logo{
   display: table;
   margin: 40px auto 20px;
 }
 
 .logo img{
-  max-height: 60px;
+  max-height: 90px;
 }
 
 .content{
   text-align: center;
   padding: 20px;
-  background: var(--main-color);
-  border-radius: 8px;
 }
 
 .content p{
-  font-size: 1.25rem;
+  font-size: 1.4rem;
+}
+
+.content a.button{
+  background: var(--main-color);
+  color: #000;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 8px;  
+  margin: 30px 10% 0;
+}
+
+.content a.button:hover{
+  opacity: 0.6;
 }
 
 .bottom{
@@ -72,31 +99,61 @@ main section{
   opacity: 0.4;
 }
 .lang a.current{
-  text-decoration: underline;
+  font-weight: bold;  
 }
 
-@media (min-width: 1200px) {
+
+
+@media (min-width: 1000px) {
   body{
     overflow: hidden;
   }
   main{
     height: 100vh;
+    display: grid;
+    grid-template-columns: 2fr 3fr 1fr;
+    padding: 0;
   }
-  main section{
-    width: 60%;
+  main section{    
   }
   .logo{
     margin: 0 auto 20px;
   }
   .logo img{
-    max-height: 90px;
+    max-height: 130px;
   }
   .content{
-    padding: 40px;
+    padding: 0 40px;
   }
   
   
   .bottom a img{
     max-height: 50px;
   }
+}
+
+.ned-logo{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+
+.ned-logo a{
+  display: block;
+}
+
+.ned-logo a:hover{
+  opacity: 0.5;
+}
+
+@media (max-width:999px){
+  .ned-logo{
+    position: relative;    
+    display: block;
+    margin: 10px auto;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+  }  
 }
